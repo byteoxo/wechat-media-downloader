@@ -1,0 +1,25 @@
+[project]
+name = "wechat-media-downloader"
+version = "0.1.0"
+description = "Concurrent downloader for media embedded in WeChat Official Account articles"
+readme = "README.md"
+authors = [
+    { name = "Acaibird", email = "byteoxxo@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13.0",
+    "httpx[http2]>=0.28.0",
+]
+
+[project.scripts]
+wechat-media-download = "wechat_media_downloader.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
